@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #1a6f56;
+    --primary-hover: #12513f;
+    --text-color: #000;
+    --card-bg: rgba(252, 249, 242, 0.85);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: var(--text-color);
+}
+
+/* Video Background */
+.video-background {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    object-fit: contain;
+}
+
+/* Optional overlay to make video less harsh */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: -1;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.input-container {
+    background-color: var(--card-bg);
+    padding: 40px 50px;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 600px;
+    /* height: 300px; */
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+.input-container h1 {
+    font-size: 26px;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.control-group {
+    margin-bottom: 20px;
+}
+
+.control-group label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+    font-size: 15px;
+}
+
+.control-group input {
+    width: 100%;
+    padding: 12px 18px;
+    border: 1px solid #dcdcdc;
+    border-radius: 25px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+.control-group input::placeholder {
+    color: #999;
+}
+
+.control-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(26, 111, 86, 0.2);
+}
+
+.submit-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.countdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.countdown ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.countdown ul li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+}
+
+.countdown ul li span {
+    font-size: 56px;
+    font-weight: 500;
+}
+
+.complete-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 0px !important;
+    color: var(--primary-color);
+    animation: titleAnimation 2s ease infinite;
+}
+
+
+@keyframes titleAnimation {
+    0% {
+        color: var(--primary-color);
+    }
+
+    25% {
+        color: #e88c07;
+    }
+
+    50% {
+        font-size: 32px;
+        color: #0ebb25;
+    }
+
+    75% {
+        color: #9d0d9a;
+    }
+
+    100% {
+        color: var(--primary-color);
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .input-container {
+        padding: 20px;
+        width: 90vw;
+    }
+
+    .video-background {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    .countdown ul li span {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .input-container h1 {
+        font-size: 22px;
+    }
+
+    .countdown ul li {
+        font-size: 14px;
+    }
+
+    .countdown ul li span {
+        font-size: 25px;
+    }
+}

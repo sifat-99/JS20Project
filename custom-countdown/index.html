@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Countdown</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Video Background -->
+    <video class="video-background" loop muted autoplay playsinline>
+        <source src="./clock.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+
+    <main class="container">
+        <!-- Input Container -->
+        <div class="input-container" id="input-container">
+            <h1>Create a Custom Countdown!</h1>
+            <form class="form" id="countdown-form">
+                <div class="control-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" placeholder="What are you counting down to?" required>
+                </div>
+                <div class="control-group">
+                    <label for="date-picker">Select a Date</label>
+                    <input type="date" id="date-picker" required>
+                </div>
+                <button type="submit" class="submit-btn">SUBMIT</button>
+            </form>
+        </div>
+        <div class="input-container" id="countdown-container" hidden>
+            <h1>Countdown Title</h1>
+            <div class="countdown" id="countdown">
+                <ul>
+                    <li><span id="days">1</span>Days</li>
+                    <li><span id="hours">20</span>Hours</li>
+                    <li><span id="minutes">30</span>Minutes</li>
+                    <li><span id="seconds">40</span>Seconds</li>
+                </ul>
+            </div>
+            <button class="submit-btn" id="complete-btn">Reset</button>
+        </div>
+        <div id="complete" class="input-container" hidden>
+            <h1 class="complete-title">Countdown Complete </h1>
+            <p><span id="finished-title" class="title">Title</span>
+                <span id="finished-date" class="date">Date</span>
+            </p>
+            <button class="submit-btn" id="new-countdown-btn">New Countdown</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
