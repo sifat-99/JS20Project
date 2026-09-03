@@ -1,20 +1,17 @@
 const speakBtn = document.getElementById('button')
 const audioElement = document.getElementById('audio')
 
+
 const getJoke = async () => {
 
-    const apiUrl = "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit";
+    const apiUrl = "https://official-joke-api.appspot.com/jokes/programming/random";
     const response = await fetch(apiUrl);
     const data = await response.json();
-
+    // console.log(data)
     if (data.error) {
         throw new Error("Something went wrong!!");
     } else {
-        if (data.type === 'single') {
-            return data.joke;
-        } else {
-            return `${data.setup} ... ${data.delivery}`;
-        }
+        return `${data[0].setup} ... ${data[0].punchline}`;
     }
 }
 
